@@ -145,6 +145,9 @@
     <Content Include="jsImages\joshscott portfolio.png" />
     <Content Include="jsImages\JS logo.png" />
     <Content Include="jsImages\SQL logo.png" />
+    <Content Include="jsImages\sunsetHills magenta retrowave sm.png" />
+    <Content Include="jsImages\sunsetHills magenta retrowave.png" />
+    <Content Include="jsImages\sunsetHills summer palms sm.png" />
     <Content Include="jsImages\SUPER DOG logo.PNG" />
     <Content Include="jsImages\XAMARIN logo.png" />
     <Content Include="Scripts\bootstrap.js" />
