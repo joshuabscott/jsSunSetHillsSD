@@ -79,6 +79,80 @@
         </div>
     </div>
 
+    <!-- Prism -->
+    <pre>
+        <code>
+            document.getElementById("button").addEventListener('click', () => {
+            let buildingOneInput = parseInt(document.getElementById("buildingOneInput").value);
+            let buildingTwoInput = parseInt(document.getElementById("buildingTwoInput").value);
+            let buildingThreeInput = parseInt(document.getElementById("buildingThreeInput").value);
+            let buildingFourInput = parseInt(document.getElementById("buildingFourInput").value);
+            let buildingFiveInput = parseInt(document.getElementById("buildingFiveInput").value);
+            let buildingSixInput = parseInt(document.getElementById("buildingSixInput").value);
+            let buildingArray = [buildingOneInput, buildingTwoInput, buildingThreeInput, buildingFourInput, buildingFiveInput, buildingSixInput];
+
+
+
+            let buildingCount = 1;
+            let sunBuildingArray = [];
+
+            let preIndex = buildingArray[0];
+            sunBuildingArray.push(preIndex);
+
+            for (let i = 1; i < buildingArray.length; i++) {
+            if (buildingArray[i]> preIndex) {
+            buildingCount++;
+            sunBuildingArray.push(buildingArray[i]);
+            preIndex = buildingArray[i];
+            }
+
+            }
+
+
+            document.getElementById('printBox').innerHTML = `Total buildings in sun:${buildingCount} building number:[${sunBuildingArray}]`;
+
+            })
+
+            or
+
+            //Step 1. Add an event listener for the button click
+            document.getElementById("the button").addEventListener("", function () {
+
+            something
+            });
+            function sunSetHills() {
+            // Step 2. Gather up the user input and stuff it into an array
+            let bldgHeght0 = parseInt(document.getElementById("txtSunSetIn1").value);
+            let bldgHeght1 = parseInt(document.getElementById("txtSunSetIn1").value);
+            let bldgHeght2 = parseInt(document.getElementById("txtSunSetIn1").value);
+            let bldgHeght3 = parseInt(document.getElementById("txtSunSetIn1").value);
+            let bldgHeght4 = parseInt(document.getElementById("txtSunSetIn1").value);
+
+            let bldgArray = [bldgHeight0, bldgHeight1, bldgHeight2, bldgHeight3, bldgHeight4,];
+            let bldgArray = newArray();
+            bldgArray.push(bldgHeight1);
+
+
+            for (let i = 0; i < oneArray.lenth; i++) {
+
+            if (oneArray[i] > currMax) {
+            count++;
+            bldgArray.push(oneArray[i]);
+            bldgArray = oneArray[i];
+            }
+            document.getElementById("output1").innerHTML = `${count} Sun get: [${bldgArray.join(',')}]`;
+            }
+            }
+            //Step 3. Reverse the array from right to left and keep track of the buildings that can see sunset
+            // "loop over array? array the array?
+
+            //Step 4. Output to user which buildings can see the sunset
+
+            output
+
+        </code>
+    </pre>
+
 
 
     <!-- Bootstrap core JavaScript -->

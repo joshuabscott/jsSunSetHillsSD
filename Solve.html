@@ -63,7 +63,53 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <!-- Main Content Starts -->
+    <section class="container-fluid main-container container-home p-0 revealator-slideup revealator-once revealator-delay1">
+        <div class="color-block d-none d-lg-block"></div>
+        <div class="row home-details-container align-items-center"></div>
+        <div class="col-lg-4 bg position-fixed d-none d-lg-block"> </div>
+        <div class="col-12 col-lg-8 offset-lg-4 home-details text-left text-sm-center text-lg-left">
+            <div>
+                <h6 class="text-uppercase open-sans-font mb-0 d-block d-sm-none d-lg-block">Mini Project</h6>
+                <h1 class="text-uppercase poppins-font"><span>SunSet </span>Hills</h1>
+                <p class="open-sans-font text-dark h4"> <span class="h4" id="statusBox"></span></p>
+                <p class="open-sans-font text-dark h4"> <span id="printBox"></span></p>
+            </div>
+            <div class="row container fluid offset-5">
+                <div class="text-dark h4">levels:</div>
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingOneInput" value="1" />
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingTwoInput" value="2" />
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingThreeInput" value="3" />
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingFourInput" value="4" />
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingFiveInput" value="5" />
+                <input class="col" type="number" step="1" min="1" max="10" id="buildingSixInput" value="6" />
+            </div>
+            <div class="row container fluid p-2">
+                <div class="text-dark h5 p-2">Building</div>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingOnep">1</p>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingTwop">2</p>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingThreep">3</p>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingFourp">4</p>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingFivep">5</p>
+                <p class="col" type="number" step="1" min="1" max="10" id="buildingSixp">6</p>
+            </div>
+
+
+            <div class="row">
+                <button class="btn btn-success offset-4" id="button">Building change</button>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- <div class="container">
         <div class="row bg-light text-dark">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">The Exercise</h1>
@@ -91,52 +137,55 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
+
+
+
+
+
+
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- Prism -->
     <script src="prism.js"></script>
 
-    <!-- Prism -->
-    <pre><code>
+
+    <!--Sunset Hills Javascript-->
+
     <script>
-        //Step 1. Add an event listener for the button click
-        document.getElementById("the button").addEventListener("", function () {
-
-            something
-        });
-        function sunSetHills() {
-            // Step 2. Gather up the user input and stuff it into an array
-            let bldgHeght0 = parseInt(document.getElementById("txtSunSetIn1").value);
-            let bldgHeght1 = parseInt(document.getElementById("txtSunSetIn1").value);
-            let bldgHeght2 = parseInt(document.getElementById("txtSunSetIn1").value);
-            let bldgHeght3 = parseInt(document.getElementById("txtSunSetIn1").value);
-            let bldgHeght4 = parseInt(document.getElementById("txtSunSetIn1").value);
-
-            let bldgArray = [bldgHeight0, bldgHeight1, bldgHeight2, bldgHeight3, bldgHeight4,];
-            let bldgArray = newArray();
-            bldgArray.push(bldgHeight1);
+        document.getElementById("button").addEventListener('click', () => {
+            let buildingOneInput = parseInt(document.getElementById("buildingOneInput").value);
+            let buildingTwoInput = parseInt(document.getElementById("buildingTwoInput").value);
+            let buildingThreeInput = parseInt(document.getElementById("buildingThreeInput").value);
+            let buildingFourInput = parseInt(document.getElementById("buildingFourInput").value);
+            let buildingFiveInput = parseInt(document.getElementById("buildingFiveInput").value);
+            let buildingSixInput = parseInt(document.getElementById("buildingSixInput").value);
+            let buildingArray = [buildingOneInput, buildingTwoInput, buildingThreeInput, buildingFourInput, buildingFiveInput, buildingSixInput];
 
 
-            for (let i = 0; i < oneArray.lenth; i++) {
 
-                if (oneArray[i] > currMax) {
-                    count++;
-                    bldgArray.push(oneArray[i]);
-                    bldgArray = oneArray[i];
+            let buildingCount = 1;
+            let sunBuildingArray = [];
+
+            let preIndex = buildingArray[0];
+            sunBuildingArray.push(preIndex);
+
+            for (let i = 1; i < buildingArray.length; i++) {
+                if (buildingArray[i] > preIndex) {
+                    buildingCount++;
+                    sunBuildingArray.push(buildingArray[i]);
+                    preIndex = buildingArray[i];
                 }
-                document.getElementById("output1").innerHTML = `${count} Sun get: [${bldgArray.join(',')}]`;
+
             }
-        }
-        //Step 3. Reverse the array from right to left and keep track of the buildings that can see sunset
-        // "loop over array? array the array?
 
-        //Step 4. Output to user which buildings can see the sunset
 
-        output
-</script>
-    </code></pre>
+            document.getElementById('printBox').innerHTML = `Total buildings in sun:${buildingCount} building number:[${sunBuildingArray}]`;
 
+        })
+    </script>
+
+    
 </body>
 
 </html>
