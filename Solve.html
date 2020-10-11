@@ -22,7 +22,7 @@
 <!-- Sunset Hills Background Image -->
 <style>
     body {
-        background-image: url('jsImages/jsFizzBuzz.png');
+        background-image: url('jsImages/sunsetHills summer palms sm.png');
         background-color: #cccccc;
     }
 </style>
@@ -83,6 +83,46 @@
         </div>
 
         <hr />
+        <!-- Sunset Hills Content -->
+        <section class="container-fluid main-container container-home p-0 revealator-slideup revealator-once revealator-delay1">
+            <div class="color-block d-none d-lg-block"></div>
+            <div class="row home-details-container align-items-center"></div>
+            <div class="col-lg-4 bg position-fixed d-none d-lg-block"> </div>
+            <div class="col-12 col-lg-8 offset-lg-4 home-details text-left text-sm-center text-lg-left">
+                <div>
+                    <h6 class="text-uppercase open-sans-font mb-0 d-block d-sm-none d-lg-block">Mini Project</h6>
+                    <h1 class="text-uppercase poppins-font"><span>SunSet </span>Hills</h1>
+                    <p class="open-sans-font text-dark h4"> <span class="h4" id="statusBox"></span></p>
+                    <p class="open-sans-font text-dark h4"> <span id="printBox"></span></p>
+                </div>
+                <div class="row container fluid offset-5">
+                    <div class="text-dark h4">levels:</div>
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingOneInput" value="1" />
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingTwoInput" value="2" />
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingThreeInput" value="3" />
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingFourInput" value="4" />
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingFiveInput" value="5" />
+                    <input class="col" type="number" step="1" min="1" max="10" id="buildingSixInput" value="6" />
+                </div>
+                <div class="row container fluid p-2">
+                    <div class="text-dark h5 p-2">Building</div>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingOnep">1</p>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingTwop">2</p>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingThreep">3</p>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingFourp">4</p>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingFivep">5</p>
+                    <p class="col" type="number" step="1" min="1" max="10" id="buildingSixp">6</p>
+                </div>
+
+
+                <div class="row">
+                    <button class="btn btn-success offset-4" id="button">Building change</button>
+                </div>
+
+
+            </div>
+
+        </section>
 
         <!-- Footer -->
         <div id="footer">
@@ -102,7 +142,36 @@
 
         <!-- Sunset Hills JavaScript -->
         <script>
+            document.getElementById("button").addEventListener('click', () => {
+                let buildingOneInput = parseInt(document.getElementById("buildingOneInput").value);
+                let buildingTwoInput = parseInt(document.getElementById("buildingTwoInput").value);
+                let buildingThreeInput = parseInt(document.getElementById("buildingThreeInput").value);
+                let buildingFourInput = parseInt(document.getElementById("buildingFourInput").value);
+                let buildingFiveInput = parseInt(document.getElementById("buildingFiveInput").value);
+                let buildingSixInput = parseInt(document.getElementById("buildingSixInput").value);
+                let buildingArray = [buildingOneInput, buildingTwoInput, buildingThreeInput, buildingFourInput, buildingFiveInput, buildingSixInput];
 
+
+
+                let buildingCount = 1;
+                let sunBuildingArray = [];
+
+                let preIndex = buildingArray[0];
+                sunBuildingArray.push(preIndex);
+
+                for (let i = 1; i < buildingArray.length; i++) {
+                    if (buildingArray[i] > preIndex) {
+                        buildingCount++;
+                        sunBuildingArray.push(buildingArray[i]);
+                        preIndex = buildingArray[i];
+                    }
+
+                }
+
+
+                document.getElementById('printBox').innerHTML = `Total buildings in sun:${buildingCount} building number:[${sunBuildingArray}]`;
+
+            })
         </script>
 
     </div>
